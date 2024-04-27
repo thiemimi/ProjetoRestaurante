@@ -15,6 +15,8 @@ namespace rm551478.Controllers
 
         public IActionResult Index()
         {
+            Endereco endereco = new Endereco(1, "Bela Vista", 160, "apto 90");
+            Cliente cliente = new Cliente("Renata", "3432452352", endereco);
             return View();
         }
 

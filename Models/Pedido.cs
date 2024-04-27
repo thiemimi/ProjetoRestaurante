@@ -3,6 +3,18 @@
     public class Pedido
     {
         public int Id { get; set; }
-        public List<ItemPedido> ItemPedido { get; set; }
+
+        private static List<ItemPedido> pedidos = new List<ItemPedido>();
+
+        internal static void AdicionarPedido(ItemPedido itemPedido)
+        {
+            pedidos.Add(itemPedido);
+        }
+
+        internal static void RemoverPedido(ItemPedido itemPedido)
+        {
+            pedidos.Remove(itemPedido);
+        }
+
     }
 }

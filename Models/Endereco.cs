@@ -2,9 +2,17 @@
 {
     public class Endereco : Auditoria
     {
+
+        public Endereco(int Id, string Rua, int Numero, string Complemento) 
+        {
+            this.Id = Id;
+            this.Rua = Rua;
+            this.Numero = Numero;
+            this.Complemento = Complemento;
+        }
         public int Id { get; set; }
-        public required string Rua { get; set; }
-        public int Numero { get; set; }
-        public required string Complemento { get; set; }
+        protected string Rua { get; set; }
+        protected int Numero { get; set; }
+        protected string Complemento { get; set; }
     }
 }

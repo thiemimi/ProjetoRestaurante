@@ -2,8 +2,12 @@
 {
     public class Cliente : Usuario
     {
-        public int Id { get; set; }
 
-        public required Endereco Endereco { get; set; }  
+        public Cliente(string nome, string telefone, Endereco endereco) : base(nome, telefone)
+        {
+            Endereco = endereco;
+        }
+        public int Id { get; set; }
+        public new Endereco Endereco { get; }
     }
 }
