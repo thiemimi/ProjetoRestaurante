@@ -10,9 +10,9 @@
             this.Numero = Numero;
             this.Complemento = Complemento;
         }
-        public int Id { get; set; }
-        protected string Rua { get; set; }
-        protected int Numero { get; set; }
-        protected string Complemento { get; set; }
+        protected int Id { get; set; }
+        public string Rua { get; set; }
+        public int Numero { get; set; }
+        public string Complemento { get; set; }
     }
 }

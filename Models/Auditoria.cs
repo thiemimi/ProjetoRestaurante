@@ -2,9 +2,9 @@
 {
     public class Auditoria
     {
-        public string UsuarioCriacao { get; set; }
-        public DateTime DataCriacao { get; set; }
-        public string UsuarioAlteracao { get; set; }
-        public DateTime DataAlteracao { get; set; }
+        protected string UsuarioCriacao { get; set; }
+        protected DateTime DataCriacao { get; set; }
+        protected string UsuarioAlteracao { get; set; }
+        protected DateTime DataAlteracao { get; set; }
     }
 }
