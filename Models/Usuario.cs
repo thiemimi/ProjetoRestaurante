@@ -1,9 +1,11 @@
-﻿namespace rm551478.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace rm551478.Models
 {
     public class Usuario : Auditoria, IUsuario
     {
 
-        public Usuario(string nome, string senha, string telefone) 
+        public Usuario(string nome, string senha, string telefone, string email) 
         {
             if (nome == "")
                 throw new Exception("O nome não pode ser vazio");
@@ -13,11 +15,16 @@
             Senha = senha;
 
             Telefone = telefone;    
+            Email = email;
         }
         protected string Nome { get; set; }
+       
+
+        [EmailAddress]
+        public string Email { get; set; }
+        [MinLength(6, ErrorMessage = "A sua senha deve contar mais de 5 caracteres")]
         protected string Senha { get; set; }
         public string Telefone { get; set; }
-        public Endereco Endereco { get; set; }
 
 
         public string Getnome()
