@@ -1,24 +1,28 @@
-﻿using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.Blazor;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace rm551478.Models
 {
-    [Table("TB_Clientes_551478", Schema = "2TDSPK")]
-    public class Cliente : Usuario
+    [Table("TB_Cliente_551478")]
+    public class Cliente
     {
-
-        public Cliente(string nome, string senha, string telefone, string email, Endereco endereco) : base(nome, senha, telefone, email)
-        {
-            Endereco = endereco;
-        }
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-        [Required]
-        [NotMapped]
-        public new Endereco Endereco { get; set; }
+        public int ClienteId { get; set; }
 
+        [Required(ErrorMessage = "O nome é obrigatório")]
+        public string Nome { get; set; }
 
+        [Column("Email", TypeName = "varchar(250)")]
+        [EmailAddress]
+        public string Email { get; set; }
+
+        public string Telefone { get; set; }
+
+        [MaxLength(11, ErrorMessage = "O CPF deve conter no máximo 11 dígitos")]
+        public string CPF { get; set; }
+
+        [StringLength(8, ErrorMessage = "O CEP deve conter 8 dígitos")]
+        public string CEP { get; set; }
     }
 }

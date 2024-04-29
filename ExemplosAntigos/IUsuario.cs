@@ -1,4 +1,4 @@
-﻿namespace rm551478.Models
+﻿namespace rm551478.ExemplosAntigos
 {
     public interface IUsuario
     {

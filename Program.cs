@@ -1,3 +1,7 @@
+using Microsoft.EntityFrameworkCore;
+using Oracle.ManagedDataAccess.Client;
+using rm551478.Persistencia;
+
 namespace rm551478
 {
     public class Program
@@ -8,6 +12,15 @@ namespace rm551478
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddDbContext<OracleDBContext>(
+                options =>
+                {
+                    options.UseOracle(builder.Configuration.GetConnectionString("OracleConnection"));
+                }
+            );
+
+
 
             var app = builder.Build();
 

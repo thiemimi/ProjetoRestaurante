@@ -1,20 +1,23 @@
-﻿namespace rm551478.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace rm551478.Models
 {
+    [Table("TB_Pedido_551478")]
     public class Pedido
     {
-        public int Id { get; set; }
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int PedidoId { get; set; }
 
-        private static List<ItemPedido> pedidos = new List<ItemPedido>();
+        public int ClienteId { get; set; }
 
-        internal static void AdicionarPedido(ItemPedido itemPedido)
-        {
-            pedidos.Add(itemPedido);
-        }
+        public Cliente Cliente { get; set; }
 
-        internal static void RemoverPedido(ItemPedido itemPedido)
-        {
-            pedidos.Remove(itemPedido);
-        }
+        [Column("Status", TypeName = "varchar(150)")]
+        public string StatusPedido { get; set; }
+
+        
 
     }
 }

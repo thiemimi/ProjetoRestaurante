@@ -1,4 +1,4 @@
-﻿namespace rm551478.Models
+﻿namespace rm551478.ExemplosAntigos
 {
     public class Funcionário(string nome, string senha, string telefone, string email) : Usuario(nome, senha, telefone, email)
     {

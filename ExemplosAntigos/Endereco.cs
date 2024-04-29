@@ -1,9 +1,9 @@
-﻿namespace rm551478.Models
+﻿namespace rm551478.ExemplosAntigos
 {
     public class Endereco : Auditoria
     {
 
-        public Endereco(int Id, string Rua, int Numero, string Complemento) 
+        public Endereco(int Id, string Rua, int Numero, string Complemento)
         {
             this.Id = Id;
             this.Rua = Rua;

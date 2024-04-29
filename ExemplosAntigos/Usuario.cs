@@ -1,11 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace rm551478.Models
+namespace rm551478.ExemplosAntigos
 {
     public class Usuario : Auditoria, IUsuario
     {
 
-        public Usuario(string nome, string senha, string telefone, string email) 
+        public Usuario(string nome, string senha, string telefone, string email)
         {
             if (nome == "")
                 throw new Exception("O nome não pode ser vazio");
@@ -14,11 +14,11 @@ namespace rm551478.Models
                 throw new Exception("A senha não pode ser vazia");
             Senha = senha;
 
-            Telefone = telefone;    
+            Telefone = telefone;
             Email = email;
         }
         protected string Nome { get; set; }
-       
+
 
         [EmailAddress]
         public string Email { get; set; }
